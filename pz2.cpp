@@ -2,133 +2,68 @@
 #include <math.h>
 using namespace std;
 
-void zd1()
-{
-    cout<<"Задание 1.\n";
-    int a, b, s, p, n, m;
-    cout<<"Введите высоту прямоугольника\n";
-    cin>>a;
-    cout<<"Введите длина прямоугольника\n";
-    cin>>b;
-    for (m = 1; m <= a; m++)
-    {
-    for (n = 1; n <= b; n++)
-    {
-    cout<<"X";
-    }
-    cout<<endl;
-    }
-    s=a*b;
-    p=2*(a+b);
-    cout<<"Площадь : "<<s<<endl;
-    cout<<"Периметр : "<<p<<endl;
-    cout<<"Нажмите Enter для продолжения...\n";
-    cin.ignore(1,'\n');
-    cin.ignore(1,'\n');
-}
-
-void zd2()
-{
-    cout<<"Задание 2.\n";
-    int n, f, f1, f2, i, fact, k;
-    cout<<"Введите положительное число n\n";
-    cin>>n;
-    fact = 1;
-    for (k=1; k<=n; k++)
-    {
-    fact = fact*k;
-    }
-    cout<<"Факториал числа n : "<<fact<<endl;
-    f = 0;
-    f1 = 1;
-    f2 = 1;
-    if (n == 1)
-    {
-        cout<<"Первые n чисел Фибоначчи : "<<f<<endl;
-    }
-    else if (n == 2)
-    {
-        cout<<"Первые n чисел Фибоначчи : "<<f<<" "<<f1<<endl;
-    }
-    else if (n == 3)
-    {
-        cout<<"Первые n чисел Фибоначчи : "<<f<<" "<<f1<<" "<<f2<<endl;
-    }
-    else
-    {
-        cout<<"Первые n чисел Фибоначчи : "<<f<<" "<<f1<<" "<<f2;
-     for (i=4; i<=n; i++)
-    {
-     f = f1 + f2;
-     f2 = f1;
-     f1 = f;
-     cout<<" "<<f;
-    }   
-    }
-    cout<<endl;
-    cout<<"Нажмите Enter для продолжения...\n";
-    cin.ignore(1,'\n');
-    cin.ignore(1,'\n');
-}
-
-void zd3()
-{
-    cout<<"Задание 3.\n";
-    int a, b;
-    cout<<"Введите два числа\n";
-    cin>>a>>b;
-    int numList[2] = {a, b};
-    for (int i = 0; i < 2; i++)
-    {   
-        int count = 0;
-        int num = a;
-        for (num = numList[i] - 1; num >= 2; num--)
-        {
-            if (numList[i]%num == 0) count += 1;
-        }
-        if (count == 0) cout<<"Число "<<numList[i]<<" - простое\n";
-        else cout<<"Число "<<numList[i]<<" - составное\n";
-    }
-    while (a != b)
-    {
-        if (a > b) a = a - b;
-        else b = b - a;
-    }
-    cout<<"НОД первого и второго числа : "<<a<<endl;
-    cout<<"Нажмите Enter для продолжения...\n";
-    cin.ignore(1,'\n');
-    cin.ignore(1,'\n');
-}
-
-void zd4()
-{
-    cout<<"Задание 4.\n";
-    int n;
-    cout<<"Введите число : \n";
-    cin>>n;
-    string num = "";
-    while (n>=1)
-    {
-        if (n%2==0) num = "0" + num;
-        else if (n%2==1) num = "1" + num;
-        n = n/2;
-    }
-    cout<<"Двоичное представление этого числа : "<<num<<endl;
-    cout<<"Нажмите Enter для продолжения...\n";
-    cin.ignore(1,'\n');
-    cin.ignore(1,'\n');
-}
-
-void zd5()
-{
-
-}
-
 int main()
 {
-    zd1(); //Сделано
-    zd2(); //Сделано
-    zd3(); //Сделано
-    zd4(); //Сделано
-    //zd5();
+   int n;
+   cout <<"Введите трехзначное число\n"; 
+   cin >> n;
+   if (99 < n && n < 1000)
+   { 
+   if (n % 2 == 0)
+   cout <<"Число является четным\n";
+   else
+   cout <<"Число является нечетным\n";
+   }
+   else cout <<"Ошибка. Введите трехзначное число!";
+   cin.ignore(1,'\n');
+   cin.ignore(1,'\n');
+   int a, b, c;
+   double s;
+   a = n/100;
+   b = (n - 100*a)/10;
+   c = n - 100*a - 10*b;
+   cout<<"Сотни : " << a <<endl;
+   cout<<"Десятки : " << b <<endl; 
+   cout<<"Еденицы : "<< c <<endl;
+   s = (a+b+c)/3.; 
+   cout<<"Среднее арифметическое цифр : "<<s<<endl;
+   cin.ignore(1,'\n');
+   int m;
+   cout<<"Введите цифру от 1 до 12\n";
+   cin >> m;
+   switch (m)
+   {
+   case 1: cout<<"Январь"<<endl; break;
+   case 2: cout<<"Февраль"<<endl; break;
+   case 3: cout<<"Март"<<endl; break;
+   case 4: cout<<"Апрель"<<endl; break;
+   case 5: cout<<"Май"<<endl; break;
+   case 6: cout<<"Июнь"<<endl; break;
+   case 7: cout<<"Июль"<<endl; break;
+   case 8: cout<<"Август"<<endl; break;
+   case 9: cout<<"Сентябрь"<<endl; break;
+   case 10: cout<<"Октябрь"<<endl; break;
+   case 11: cout<<"Ноябрь"<<endl; break;
+   case 12: cout<<"Декабрь"<<endl; break;
+   }  
+   cin.ignore(1,'\n');
+   cin.ignore(1,'\n');
+   switch (m)
+   {
+   case 1: cout<<"Пора года : зима"<<endl; break;
+   case 2: cout<<"Пора года : зима"<<endl; break;
+   case 3: cout<<"Пора года : весна"<<endl; break;
+   case 4: cout<<"Пора года : весна"<<endl; break;
+   case 5: cout<<"Пора года : весна"<<endl; break;
+   case 6: cout<<"Пора года : лето"<<endl; break;
+   case 7: cout<<"Пора года : лето"<<endl; break;
+   case 8: cout<<"Пора года : лето"<<endl; break;
+   case 9: cout<<"Пора года : осень"<<endl; break;
+   case 10: cout<<"Пора года : осень"<<endl; break;
+   case 11: cout<<"Пора года : осень"<<endl; break;
+   case 12: cout<<"Пора года : зима"<<endl; break;
+   }  
+   return 0;
 }
+
+
